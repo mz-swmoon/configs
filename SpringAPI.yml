@@ -18,6 +18,24 @@ server:
 
 
 # Discovery Server Access
+
+---
+spring:
+  profiles: local
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: ${spring.cloud.client.hostname}
+
+---
+spring:
+  profiles: dev
+
 eureka:
   client:
     healthcheck:
