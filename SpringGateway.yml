@@ -60,7 +60,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://spring-eureka.apps.pas.martin-bw-piv.net/eureka/
+      defaultZone: http://spring-eureka.apps.pas.martin-bw-piv.net/eureka
       registry-fetch-interval-seconds: 5
   instance:
     preferIpAddress: true
