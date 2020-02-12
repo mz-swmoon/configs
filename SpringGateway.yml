@@ -9,9 +9,8 @@ spring:
       max-request-size: 1024MB
       location: ${java.io.tmpdir}
 
-server:     # Default Gateway server port
-  port: 8060
-
+server:
+  port: ${PORT:8060}
 # Zuul route rule : zuul.routes.[spring.application.name]=path
 zuul:
   host:
@@ -41,9 +40,6 @@ management:     # If you set off security...
 spring:
   profiles: local
 
-server:
-  port: ${PORT:8090}
-
 eureka:
   client:
     serviceUrl:
@@ -60,8 +56,6 @@ eureka:
 spring:
   profiles: cloud
 
-server:
-  port: ${PORT:8090}
 
 eureka:
   client:
