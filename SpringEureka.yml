@@ -27,7 +27,6 @@ spring:
 
 eureka:
   instance:
-    hostname: ${vcap.application.uris[0]:localhost}
     preferIpAddress: true
   client:
     registerWithEureka: false
