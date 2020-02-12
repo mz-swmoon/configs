@@ -41,6 +41,6 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://spring-eureka.sys.pas.martin-bw-piv.net/eureka/
+      defaultZone: http://spring-eureka.apps.pas.martin-bw-piv.net/eureka
   instance:
     hostname: ${spring.cloud.client.hostname}
