@@ -31,6 +31,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: ${spring.cloud.client.hostname}
+    nonSecurePort: 80
 
 ---
 spring:
@@ -42,3 +43,5 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://spring-eureka.apps.pas.martin-bw-piv.net/eureka
+  instance:
+    nonSecurePort: 80
