@@ -6,7 +6,8 @@ management:
   security:
     enabled: false
     
-
+server:
+  port: ${PORT:8090}
 
 #datasource:
 #  mysql:
@@ -22,9 +23,6 @@ management:
 spring:
   profiles: local
 
-server:
-  port: ${PORT:8090}
-
 eureka:
   client:
     healthcheck:
@@ -33,14 +31,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: ${spring.cloud.client.hostname}
-    nonSecurePort: 80
+    
 
 ---
 spring:
   profiles: cloud
-
-server:
-  port: ${PORT:80}
 
 eureka:
   client:

@@ -23,9 +23,11 @@ eureka:
 
 ---
 spring:
-  profiles: cloud
+  profiles: dev
 
 eureka:
+  instance:
+    hostname: ${spring.cloud.client.hostname}
   client:
     registerWithEureka: false
     fetchRegistry: false
