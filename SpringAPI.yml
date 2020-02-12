@@ -43,4 +43,4 @@ eureka:
     serviceUrl:
       defaultZone: http://spring-eureka.apps.pas.martin-bw-piv.net/eureka
   instance:
-    hostname: ${spring.cloud.client.hostname}
+    hostname: ${vcap.application.uris[0]:localhost}

@@ -64,6 +64,6 @@ eureka:
       registry-fetch-interval-seconds: 5
   instance:
     preferIpAddress: true
-    hostname: ${spring.cloud.client.hostname}
+    hostname: ${vcap.application.uris[0]:localhost}
     lease-expiration-duration-in-seconds: 5
     lease-renewal-interval-in-seconds: 10
