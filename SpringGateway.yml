@@ -1,6 +1,6 @@
 spring:
   application:    # Identify this application
-    name: SpringZuul
+    name: SpringGateway
   server-uuid: ${random.uuid}
   servlet:    # spring boot 2.x
     multipart:
@@ -60,7 +60,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://springeureka.sys.pas.martin-bw-piv.net/eureka/
       registry-fetch-interval-seconds: 5
   instance:
     preferIpAddress: true

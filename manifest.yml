@@ -1,0 +1,64 @@
+---
+applications:
+- name: spring-config
+  route: springconfig.sys.pas.martin-bw-piv.net
+  memory: 1G
+  instances: 1
+  path: ./spring-config/build/libs/spring-config.jar
+  buildpacks:
+  - java_buildpack_offline
+  env:
+    spring_profiles_active: dev
+
+
+---
+applications:
+- name: spring-eureka
+  route: springeureka.sys.pas.martin-bw-piv.net
+  memory: 1G
+  instances: 1
+  path: ./spring-eureka/build/libs/spring-eureka.jar
+  buildpacks:
+  - java_buildpack_offline
+  env:
+    spring_profiles_active: dev    
+
+
+---
+applications:
+- name: spring-gateway
+  route: springgateway.sys.pas.martin-bw-piv.net
+  memory: 1G
+  instances: 1
+  path: ./spring-gateway/build/libs/spring-gateway.jar
+  buildpacks:
+  - java_buildpack_offline
+  env:
+    spring_profiles_active: dev
+
+
+---
+applications:
+- name: spring-ui
+  hostname: springui.sys.pas.martin-bw-piv.net
+  memory: 1G
+  instances: 1
+  path: ./spring-ui/build/libs/spring-ui.jar
+  buildpacks:
+  - java_buildpack_offline
+  env:
+    spring_profiles_active: dev    
+
+
+
+---
+applications:
+- name: spring-api
+  route: springapi.sys.pas.martin-bw-piv.net
+  memory: 1G
+  instances: 1
+  path: ./spring-api/build/libs/spring-api.jar
+  buildpacks:
+  - java_buildpack_offline
+  env:
+    spring_profiles_active: dev    
