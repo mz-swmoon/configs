@@ -16,6 +16,9 @@ server:
 spring:
   profiles: local
 
+server:
+  port: ${PORT:8080}
+
 api:
   zuuluri: http://localhost:8060/SPRINGAPI
   eurekauri: http://SPRINGAPI
@@ -32,6 +35,9 @@ eureka:
 ---
 spring:
   profiles: cloud
+
+server:
+  port: ${PORT:80}
 
 api:
   zuuluri: http://spring-gateway.apps.pas.martin-bw-piv.net/SPRINGAPI
