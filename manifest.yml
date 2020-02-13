@@ -1,64 +1,59 @@
 ---
 applications:
-- name: spring-config
-  route: springconfig.sys.pas.martin-bw-piv.net
-  memory: 1G
-  instances: 1
-  path: ./spring-config/build/libs/spring-config.jar
-  buildpacks:
-  - java_buildpack_offline
-  env:
-    spring_profiles_active: dev
+# - name: spring-config
+#   memory: 1G
+#   instances: 1
+#   path: ../spring-config/build/libs/spring-config.jar
+#   buildpacks:
+#   - java_buildpack_offline
+#   env:
+#     spring_profiles_active: cloud
+#     loggin_level: debug
+#     spring_cloud_config_server_git_uri: https://github.com/mz-swmoon/configs.git
+
+# - name: spring-eureka
+#   memory: 1G
+#   instances: 1
+#   path: ../spring-eureka/build/libs/spring-eureka.jar
+#   buildpacks:
+#   - java_buildpack_offline
+#   env:
+#     spring.profiles.active: cloud    
+#     spring.cloud.config.uri: http://spring-config.apps.pas.martin-bw-piv.net
+#     eureka.instance.hostname: ${vcap.application.uris[0]}
 
 
----
-applications:
-- name: spring-eureka
-  route: springeureka.sys.pas.martin-bw-piv.net
-  memory: 1G
-  instances: 1
-  path: ./spring-eureka/build/libs/spring-eureka.jar
-  buildpacks:
-  - java_buildpack_offline
-  env:
-    spring_profiles_active: dev    
+# - name: spring-gateway
+#   memory: 1G
+#   instances: 1
+#   path: ../spring-gateway/build/libs/spring-gateway.jar
+#   buildpacks:
+#   - java_buildpack_offline
+#   env:
+#     spring.profiles.active: cloud
+#     spring.cloud.config.uri: http://spring-config.apps.pas.martin-bw-piv.net
+#     eureka.instance.hostname: ${vcap.application.uris[0]}
 
 
----
-applications:
-- name: spring-gateway
-  route: springgateway.sys.pas.martin-bw-piv.net
-  memory: 1G
-  instances: 1
-  path: ./spring-gateway/build/libs/spring-gateway.jar
-  buildpacks:
-  - java_buildpack_offline
-  env:
-    spring_profiles_active: dev
+# - name: spring-ui
+#   memory: 1G
+#   instances: 1
+#   path: ../spring-ui/build/libs/spring-ui.jar
+#   buildpacks:
+#   - java_buildpack_offline
+#   env:
+#     spring.profiles.active: cloud    
+#     spring.cloud.config.uri: http://spring-config.apps.pas.martin-bw-piv.net
+#     eureka.instance.hostname: ${vcap.application.uris[0]}
 
 
----
-applications:
-- name: spring-ui
-  hostname: springui.sys.pas.martin-bw-piv.net
-  memory: 1G
-  instances: 1
-  path: ./spring-ui/build/libs/spring-ui.jar
-  buildpacks:
-  - java_buildpack_offline
-  env:
-    spring_profiles_active: dev    
-
-
-
----
-applications:
 - name: spring-api
-  route: springapi.sys.pas.martin-bw-piv.net
   memory: 1G
   instances: 1
-  path: ./spring-api/build/libs/spring-api.jar
+  path: ../spring-api/build/libs/spring-api.jar
   buildpacks:
   - java_buildpack_offline
   env:
-    spring_profiles_active: dev    
+    spring.profiles.active: cloud    
+    spring.cloud.config.uri: http://spring-config.apps.pas.martin-bw-piv.net
+    eureka.instance.hostname: ${vcap.application.uris[0]}
